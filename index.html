@@ -60,20 +60,16 @@
         }
         .bandeau-blanc {
             background-color: white;
-            width: 100%;
+            width: calc(100% - 14cm); /* 7cm margin on each side */
+            margin: 0 auto; /* Center the bandeau */
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             position: relative;
-            top: 120px; /* Adjust to align with the content below the fixed nav */
-            margin-bottom: 20px;
+            top: 80px; /* Align with the bottom of the fixed nav */
         }
-        /* Section styles */
-        section {
+        .section {
             padding: 20px;
             min-height: 1920px; /* Ensures each section is at least one screen height */
-            background-color: #88DAE7;
-            color: black; /* Text color set to black */
-            text-align: center;
             position: relative;
         }
         .section h2 {
