@@ -1,3 +1,49 @@
+Lorsque vous rencontrez un problème où un iframe affiche une ancienne version d'une page, cela peut être dû à plusieurs raisons, notamment le cache du navigateur ou le cache du serveur. Voici quelques étapes pour résoudre ce problème et s'assurer que vous affichez la version la plus récente :
+
+### 1. **Forcer le Rafraîchissement du Cache du Navigateur**
+
+Votre navigateur peut avoir mis en cache l'ancienne version de la page. Vous pouvez essayer de vider le cache ou de forcer le rafraîchissement pour voir si cela résout le problème.
+
+- **Sur Chrome** :
+  - Ouvrez les outils de développement avec `F12` ou `Ctrl+Shift+I` (Windows/Linux) ou `Cmd+Option+I` (Mac).
+  - Cliquez sur l'onglet "Network".
+  - Cochez "Disable cache" (en haut, sous l'onglet Network).
+  - Rafraîchissez la page en appuyant sur `Ctrl+R` (Windows/Linux) ou `Cmd+R` (Mac).
+
+- **Sur Firefox** :
+  - Ouvrez les outils de développement avec `F12` ou `Ctrl+Shift+I` (Windows/Linux) ou `Cmd+Option+I` (Mac).
+  - Allez dans l'onglet "Network".
+  - Cochez "Disable Cache" (en haut, sous l'onglet Network).
+  - Rafraîchissez la page avec `Ctrl+R` (Windows/Linux) ou `Cmd+R` (Mac).
+
+### 2. **Ajouter un Paramètre de Cache Busting à l'URL**
+
+Pour éviter que les navigateurs utilisent une version mise en cache, vous pouvez ajouter un paramètre de cache busting à l'URL dans l'iframe. Ce paramètre est généralement un timestamp ou un numéro de version. Cela force le navigateur à recharger le contenu.
+
+Modifiez l'URL dans votre iframe comme suit :
+
+```html
+<iframe src="https://my.weezevent.com/le-plateau-comedy-club-copy-1?v=20240813" title="Réservation"></iframe>
+```
+
+Dans cet exemple, `?v=20240813` est un paramètre de version ou un timestamp. Vous pouvez modifier la date ou le numéro chaque fois que vous souhaitez vous assurer que la dernière version est chargée.
+
+### 3. **Vérifiez la Configuration du Serveur**
+
+Si le problème persiste, il peut être utile de vérifier la configuration du serveur qui héberge la page de destination (`https://my.weezevent.com/le-plateau-comedy-club-copy-1`). Assurez-vous que le serveur n'a pas de cache persistant qui pourrait empêcher le chargement de la dernière version.
+
+### 4. **Vérifiez l’URL Directement**
+
+Assurez-vous que la nouvelle version est bien publiée et accessible directement via le navigateur sans passer par l’iframe :
+
+- Ouvrez un nouvel onglet dans votre navigateur et visitez `https://my.weezevent.com/le-plateau-comedy-club-copy-1`.
+- Vérifiez si la dernière version est affichée.
+
+### Exemple Mis à Jour du Code HTML avec Cache Busting
+
+Voici le code HTML mis à jour pour inclure le paramètre de cache busting :
+
+```html
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -19,32 +65,32 @@
         header {
             display: flex;
             align-items: center;
-            padding: 10px 20px;
+            padding: 20px;
             position: fixed;
             top: 0;
             width: 100%;
-            background-color: #FFFFFF; /* White background for the header */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow for header */
+            background-color: #88DAE7;
             z-index: 1000;
         }
         .logo {
-            width: 120px; /* Adjusted size for the logo */
-            margin-right: 20px;
+            width: 90px; /* Previous size */
+            cursor: pointer;
         }
         .title {
-            font-size: 2em;
+            font-size: 2.5em;
             font-weight: 800;
             color: white; /* Title color set to white */
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Drop shadow */
+            text-align: center;
             flex-grow: 1;
         }
         nav {
             background-color: white;
             display: flex;
             justify-content: center;
-            padding: 10px 0;
+            padding: 15px 0;
             position: fixed;
-            top: 70px; /* Adjusted for the header height */
+            top: 80px; /* Height of the header plus 0.5cm (approximately 20px) */
             width: 100%;
             z-index: 1000;
         }
@@ -59,29 +105,37 @@
             color: #FED766;
         }
         .bandeau-blanc {
-            background-color: #FFFFFF; /* White background for the bandeau */
-            padding: 30px 20px;
-            margin: 80px auto 0 auto; /* Centering and spacing from nav */
+            background-color: white;
             width: calc(100% - 14cm); /* 7cm margin on each side */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow for bandeau */
+            margin: 0 auto; /* Center the bandeau */
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             position: relative;
+            top: 80px; /* Align with the bottom of the fixed nav */
         }
         .section {
             padding: 20px;
             min-height: 1920px; /* Ensures each section is at least one screen height */
+            position: relative;
         }
         #accueil {
             margin-top: 4cm; /* Descend the section accueil by 4cm */
         }
         .section h2 {
-            font-size: 2em;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 1.5em;
             font-weight: bold;
             color: #000000; /* Title color in sections */
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
         .section img {
-            width: 50px; /* Adjusted size for logos */
+            width: 75px; /* 50% of the previous size (150px) */
             margin: 10px;
+        }
+        .logo-img {
+            width: 90px; /* Previous size of logo.png */
         }
         .large-img {
             width: 750px; /* Five times larger */
@@ -109,7 +163,7 @@
 
 <header>
     <a href="https://leplateaucomedyclub.github.io/">
-        <img src="Logo_LePlateau.png" alt="Le Plateau Comedy Club" class="logo">
+        <img src="logo.png" alt="Le Plateau Comedy Club" class="logo-img">
     </a>
     <div class="title">LE PLATEAU COMEDY CLUB</div>
 </header>
@@ -147,16 +201,5 @@
 <section id="rester">
     <div class="bandeau-blanc text-center">
         <h2>Réserver</h2>
-        <iframe src="https://my.weezevent.com/le-plateau-comedy-club-copy-1" title="Réservation"></iframe>
-    </div>
-</section>
-
-<section id="qui-sommes-nous">
-    <div class="bandeau-blanc text-center">
-        <h2>Qui sommes-nous</h2>
-        <p>DES GROS FDP</p>
-    </div>
-</section>
-
-</body>
-</html>
+        <iframe src="https://my.weezevent.com/le-plateau-comedy-club-copy-1?v=20240813" title="Réservation"></iframe>
+    </
