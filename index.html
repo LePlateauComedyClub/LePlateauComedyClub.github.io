@@ -72,6 +72,9 @@
             min-height: 1920px; /* Ensures each section is at least one screen height */
             position: relative;
         }
+        #accueil {
+            margin-top: 4cm; /* Descend the section accueil by 4cm */
+        }
         .section h2 {
             position: absolute;
             top: 20px;
@@ -105,6 +108,9 @@
             height: 600px; /* Adjusted to fit the content */
             border: none;
         }
+        .text-center {
+            text-align: center; /* Center text inside bandeau */
+        }
     </style>
 </head>
 <body>
@@ -124,7 +130,7 @@
 </nav>
 
 <section id="accueil">
-    <div class="bandeau-blanc">
+    <div class="bandeau-blanc text-center">
         <h2>Accueil</h2>
         <h3>Organisation de soirées Stand-Up à Paris et ailleurs !</h3>
         <img src="Logo_LePlateau.png" alt="Logo Le Plateau">
@@ -139,7 +145,7 @@
 </section>
 
 <section id="ils-sont-venus">
-    <div class="bandeau-blanc">
+    <div class="bandeau-blanc text-center">
         <h2>Ils sont venus</h2>
         <img src="Ilssontvenus1.png" alt="Ils sont venus" class="large-img">
         <p>Retrouvez toutes les semaines vos humoristes préférés</p>
@@ -147,14 +153,14 @@
 </section>
 
 <section id="rester">
-    <div class="bandeau-blanc">
+    <div class="bandeau-blanc text-center">
         <h2>Réserver</h2>
         <iframe src="https://my.weezevent.com/le-plateau-comedy-club-copy-1" title="Réservation"></iframe>
     </div>
 </section>
 
 <section id="qui-sommes-nous">
-    <div class="bandeau-blanc">
+    <div class="bandeau-blanc text-center">
         <h2>Qui sommes-nous</h2>
         <p>DES GROS FDP</p>
     </div>
