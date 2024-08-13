@@ -19,97 +19,121 @@
         header {
             display: flex;
             align-items: center;
-            padding: 20px;
+            padding: 10px;
             position: fixed;
             top: 0;
             width: 100%;
             background-color: #88DAE7;
             z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         .logo {
-            width: 90px; /* Previous size */
+            width: 70px; /* Reduced size for smaller screens */
             cursor: pointer;
         }
         .title {
-            font-size: 2.5em;
+            font-size: 1.5em; /* Adjusted size for smaller screens */
             font-weight: 800;
-            color: white; /* Title color set to white */
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Drop shadow */
-            text-align: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
             flex-grow: 1;
+            text-align: center;
         }
         nav {
             background-color: white;
             display: flex;
             justify-content: center;
-            padding: 15px 0;
+            padding: 10px 0;
             position: fixed;
-            top: 80px; /* Height of the header plus 0.5cm (approximately 20px) */
+            top: 60px; /* Adjusted for header height */
             width: 100%;
             z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         nav a {
-            margin: 0 15px;
+            margin: 0 10px;
             color: #000000;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.2em;
+            font-size: 1em;
         }
         nav a:hover {
             color: #FED766;
         }
         .bandeau-blanc {
             background-color: white;
-            width: calc(100% - 14cm); /* 7cm margin on each side */
-            margin: 0 auto; /* Center the bandeau */
+            width: calc(100% - 14px); /* Adjusted to fit screen with margin */
+            margin: 0 auto;
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             position: relative;
-            top: 80px; /* Align with the bottom of the fixed nav */
+            top: 80px; /* Space for fixed nav */
+            box-sizing: border-box; /* Include padding in width calculation */
         }
         .section {
             padding: 20px;
-            min-height: 1920px; /* Ensures each section is at least one screen height */
+            min-height: 100vh; /* Full viewport height */
             position: relative;
+            box-sizing: border-box;
         }
         #accueil {
-            margin-top: 4cm; /* Descend the section accueil by 4cm */
+            margin-top: 4cm; /* Adjust for larger screens */
         }
         .section h2 {
-            position: absolute;
-            top: 20px;
-            left: 20px;
             font-size: 1.5em;
             font-weight: bold;
-            color: #000000; /* Title color in sections */
+            color: #000000;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
         .section img {
-            width: 75px; /* 50% of the previous size (150px) */
+            width: 50px; /* Reduced size for smaller screens */
             margin: 10px;
         }
-        .logo-img {
-            width: 90px; /* Previous size of logo.png */
-        }
         .large-img {
-            width: 750px; /* Five times larger */
+            width: 100%; /* Responsive size */
+            max-width: 750px; /* Limit max width */
         }
         .instagram-icon {
-            width: 60px; /* 80% smaller */
+            width: 48px; /* Reduced size for smaller screens */
             margin: 10px;
         }
         .instagram-text {
-            font-size: 1.2em;
+            font-size: 1em;
             color: black;
             margin-left: 10px;
         }
         iframe {
             width: 100%;
-            height: 600px; /* Adjusted to fit the content */
+            height: 400px; /* Adjusted for smaller screens */
             border: none;
         }
         .text-center {
-            text-align: center; /* Center text inside bandeau */
+            text-align: center;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .title {
+                font-size: 1.2em;
+            }
+            nav a {
+                font-size: 0.9em;
+            }
+            .logo {
+                width: 50px;
+            }
+            .section h2 {
+                font-size: 1.2em;
+            }
+            .section img {
+                width: 40px;
+            }
+            .large-img {
+                max-width: 100%;
+            }
+            .instagram-icon {
+                width: 40px;
+            }
         }
     </style>
 </head>
@@ -117,7 +141,7 @@
 
 <header>
     <a href="https://leplateaucomedyclub.github.io/">
-        <img src="logo.png" alt="Le Plateau Comedy Club" class="logo-img">
+        <img src="logo.png" alt="Le Plateau Comedy Club" class="logo">
     </a>
     <div class="title">LE PLATEAU COMEDY CLUB</div>
 </header>
