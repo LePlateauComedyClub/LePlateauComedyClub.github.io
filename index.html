@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Le Plateau Comedy Club</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <style>
         /* Base styles */
         body {
@@ -14,208 +15,303 @@
             background-color: #88DAE7;
             color: #000000;
             overflow-x: hidden;
-            scroll-behavior: smooth;
         }
+
         header {
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            padding: 10px;
+            padding: 10px 20px;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             position: fixed;
-            top: 0;
             width: 100%;
-            background-color: #88DAE7;
+            top: 0;
             z-index: 1000;
+        }
+
+        .header-left {
+            font-weight: 700;
+            font-size: 1.5em;
+        }
+
+        .header-right img {
+            width: 24px;
+            height: 24px;
+            margin-left: 15px;
+        }
+
+        nav {
+            position: fixed;
+            right: 0;
+            top: 60px;
+            background-color: white;
+            padding: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            text-align: right;
         }
-        .logo {
-            width: 70px; /* Reduced size for smaller screens */
-            cursor: pointer;
+
+        nav a {
+            display: block;
+            margin: 10px 0;
+            text-decoration: none;
+            color: black;
+            font-weight: 700;
         }
-        .title {
-            font-size: 1.5em; /* Adjusted size for smaller screens */
-            font-weight: 800;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-            flex-grow: 1;
+
+        section {
+            padding: 80px 20px;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .section-title {
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        /* First section */
+        #accueil {
             text-align: center;
         }
-        nav {
-            background-color: white;
-            display: flex;
-            justify-content: center;
-            padding: 10px 0;
-            position: fixed;
-            top: 60px; /* Adjusted for header height */
+
+        #accueil img {
+            max-width: 60%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        /* Ticketing section */
+        #billeterie iframe {
             width: 100%;
-            z-index: 1000;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        nav a {
-            margin: 0 10px;
-            color: #000000;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1em;
-        }
-        nav a:hover {
-            color: #FED766;
-        }
-        .bandeau-blanc {
-            background-color: white;
-            width: calc(100% - 14cm); /* 7cm margin on each side */
-            margin: 0 auto; /* Center the bandeau */
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            position: relative;
-            top: 60px; /* Adjusted for reduced margin above Accueil */
-            box-sizing: border-box; /* Include padding in width calculation */
-        }
-        .section {
-            padding: 20px;
-            min-height: 100vh; /* Full viewport height */
-            position: relative;
-            box-sizing: border-box;
-        }
-        #accueil {
-            margin-top: 2cm; /* Reduced margin from 4cm to 2cm */
-        }
-        .section h2 {
-            font-size: 1.5em;
-            font-weight: bold;
-            color: #000000;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-        }
-        .section img {
-            margin: 10px;
-        }
-        .logo-img {
-            width: 150px; /* Default size for PC */
-        }
-        .logo-large {
-            width: 90px; /* Reduced size for smartphones */
-        }
-        .large-img {
-            width: 100%; /* Responsive size */
-            max-width: 750px; /* Limit max width */
-        }
-        .instagram-icon {
-            width: 48px; /* Reduced size for smaller screens */
-            margin: 10px;
-        }
-        .instagram-text {
-            font-size: 1em;
-            color: black;
-            margin-left: 10px;
-        }
-        .iframe-container {
-            width: calc(100% - 14cm); /* 7cm margin on each side */
-            margin: 0 auto;
-            box-sizing: border-box;
-        }
-        iframe {
-            width: 100%;
-            height: 600px; /* Adjusted height for better visibility */
+            height: 600px;
             border: none;
         }
-        .text-center {
+
+        /* Artists section */
+        #ils-sont-venus {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .artist {
+            width: 3.5cm;
+            height: 6cm;
+            border: 1px solid #ccc;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .artist img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .artist-name {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px;
+            font-size: 0.9em;
+            text-align: center;
+        }
+
+        /* Concept section */
+        #le-concept {
+            text-align: center;
+        }
+
+        #le-concept img {
+            width: 100px;
+            margin: 10px;
+        }
+
+        /* About Us section */
+        #qui-sommes-nous {
+            text-align: center;
+        }
+
+        /* Scrolling photo section */
+        .scrolling-photos {
+            display: flex;
+            overflow-x: scroll;
+            padding: 20px 0;
+        }
+
+        .scrolling-photos img {
+            height: 150px;
+            margin-right: 10px;
+            object-fit: cover;
+        }
+
+        /* Back to top button */
+        .back-to-top {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .back-to-top a {
+            text-decoration: none;
+            font-weight: 700;
+            color: black;
         }
 
         /* Responsive styles */
         @media (max-width: 768px) {
-            .title {
-                font-size: 1.2em;
+            header {
+                flex-direction: column;
+                align-items: flex-start;
             }
-            nav a {
-                font-size: 0.9em;
+
+            nav {
+                top: 120px;
             }
-            .logo {
-                width: 50px;
+
+            #accueil img {
+                max-width: 80%;
             }
-            .section h2 {
-                font-size: 1.2em;
+
+            #billeterie iframe {
+                height: 400px;
             }
-            .section img {
-                width: 40px; /* Reduced size for images */
+
+            .artist {
+                width: 100px;
+                height: 160px;
             }
-            .large-img {
-                max-width: 100%;
-            }
-            .instagram-icon {
-                width: 40px;
-            }
-            .bandeau-blanc {
-                width: calc(100% - 4cm); /* Adjust for smaller screens with less margin */
-            }
-            .iframe-container {
-                width: calc(100% - 4cm); /* Adjust for smaller screens with less margin */
-            }
-            .logo-img {
-                width: 90px; /* Adjust size for responsive design */
-            }
-            .logo-large {
-                width: 50px; /* Reduced size for smaller screens */
-            }
-            iframe {
-                height: 400px; /* Adjusted height for smaller screens */
-            }
+        }
+
+        /* Random background color */
+        body {
+            background-color: #88DAE7;
+        }
+
+        body.random-bg-1 {
+            background-color: #FED766;
+        }
+
+        body.random-bg-2 {
+            background-color: #EC91D8;
+        }
+
+        body.random-bg-3 {
+            background-color: #39EA6B;
         }
     </style>
 </head>
-<body>
 
-<header>
-    <a href="https://leplateaucomedyclub.github.io/">
-        <img src="logo.png" alt="Le Plateau Comedy Club" class="logo-img">
-    </a>
-    <div class="title">LE PLATEAU COMEDY CLUB</div>
-</header>
+<body class="random-bg">
 
-<nav>
-    <a href="#accueil">Accueil</a>
-    <a href="#rester">Réserver</a>
-    <a href="#ils-sont-venus">Ils sont venus</a>
-    <a href="#qui-sommes-nous">Qui sommes-nous</a>
-</nav>
-
-<section id="accueil">
-    <div class="bandeau-blanc text-center">
-        <h2>Accueil</h2>
-        <h3>Organisation de soirées Stand-Up à Paris et ailleurs !</h3>
-        <img src="Logo_LePlateau.png" alt="Logo Le Plateau" class="logo-large">
-        <p>Le Plateau : Humoristes confirmés, sélectionnés parmi les meilleurs.</p>
-        <img src="Logo_OpenMic.png" alt="Logo Open Mic" class="logo-large">
-        <p>Le Plateau Open Mic (POM) : Nouveaux talents ou humoristes confirmés qui testent leurs nouvelles blagues.</p>
-        <a href="https://www.instagram.com/leplateauoff/">
-            <img src="Instagram_icon.png" alt="Instagram" class="instagram-icon">
-            <span class="instagram-text">@leplateauoff</span>
-        </a>
-    </div>
-</section>
-
-<section id="ils-sont-venus">
-    <div class="bandeau-blanc text-center">
-        <h2>Ils sont venus</h2>
-        <img src="Ilssontvenus1.png" alt="Ils sont venus" class="large-img">
-        <p>Retrouvez toutes les semaines vos humoristes préférés</p>
-    </div>
-</section>
-
-<section id="rester">
-    <div class="bandeau-blanc text-center">
-        <h2>Réserver</h2>
-        <div class="iframe-container">
-            <iframe src="https://my.weezevent.com/le-plateau-comedy-club-copy-1?v=1" title="Réservation"></iframe> <!-- Cache busting parameter added -->
+    <header>
+        <div class="header-left">
+            LE PLATEAU COMEDY CLUB
         </div>
-    </div>
-</section>
+        <div class="header-right">
+            <a href="https://www.instagram.com/leplateauoff/" target="_blank"><img src="Instagram_icon_black.png"
+                    alt="Instagram"></a>
+            <a href="https://www.facebook.com/p/Le-Plateau-Comedy-Club-61555936007236/?_rdr" target="_blank"><img
+                    src="fb_icon_black.png" alt="Facebook"></a>
+            <a href="https://www.tiktok.com/@leplateauoff" target="_blank"><img src="tiktok_icon_black.png"
+                    alt="TikTok"></a>
+            <a href="https://g.page/r/CcjkKhjspymvEBE/review" target="_blank">
+                <div style="display: inline-block; padding: 5px 10px; border: 1px solid black;">Laisser un avis</div>
+            </a>
+        </div>
+    </header>
 
-<section id="qui-sommes-nous">
-    <div class="bandeau-blanc text-center">
-        <h2>Qui sommes-nous</h2>
-        <p>DES GROS FDP</p>
-    </div>
-</section>
+    <nav>
+        <a href="#accueil">Accueil</a>
+        <a href="#billeterie">Billetterie</a>
+        <a href="#ils-sont-venus">Ils sont venus</a>
+        <a href="#le-concept">Le concept</a>
+        <a href="#qui-sommes-nous">Qui sommes-nous</a>
+    </nav>
 
+    <section id="accueil">
+        <img src="logo.png" alt="Le Plateau Comedy Club">
+        <p>Tous les mercredis 20h chez</p>
+        <a href="https://www.monsieur-lezinc.com/odeon-1" target="_blank"><img src="MONSIEUR-LE-ZINC-BLACK.png"
+                alt="Monsieur Le Zinc"></a>
+        <p>et d'autres dates exceptionnelles</p>
+        <p>13 rue Monsieur Le Prince 75006 Paris<br>Métro Odéon</p>
+        <a href="https://maps.app.goo.gl/ea9cp9QZPrPCF4rZ7" target="_blank">Voir sur la carte</a>
+    </section>
+
+    <section id="billeterie">
+        <h2 class="section-title">Billetterie</h2>
+        <iframe src="https://my.weezevent.com/le-plateau-comedy-club-copy-1"></iframe>
+    </section>
+
+    <section id="ils-sont-venus">
+        <h2 class="section-title">Ils sont venus</h2>
+        <div class="artist">
+            <a href="https://www.instagram.com/lavraielala/" target="_blank">
+                <img src="artiste1.png" alt="Lala SAGNA">
+                <div class="artist-name">Lala SAGNA</div>
+            </a>
+        </div>
+        <div class="artist">
+            <a href="https://www.instagram.com/malik_faresofficiel/" target="_blank">
+                <img src="artiste2.png" alt="Malik FARES">
+                <div class="artist-name">Malik FARES</div>
+            </a>
+        </div>
+        <!-- Continue for the other artists -->
+    </section>
+
+    <section id="le-concept">
+        <h2 class="section-title">Le concept</h2>
+        <p>Depuis janvier 2024 Le Plateau Comedy Club organise des soirées Stand-Up à Paris et ailleurs !</p>
+        <p>Avec une ambition : vous servir le meilleur du Stand Up sur le Plateau !</p>
+        <div>
+            <img src="Logo_LePlateau.png" alt="Le Plateau">
+            <span>Le Plateau : Humoristes confirmés, sélectionnés parmi les meilleurs.</span>
+        </div>
+        <div>
+            <img src="Logo_OpenMic.png" alt="Le Plateau Open Mic">
+            <span>Le Plateau Open Mic (POM) : Nouveaux talents ou humoristes confirmés qui testent leurs nouvelles
+                blagues.</span>
+        </div>
+    </section>
+
+    <section id="qui-sommes-nous">
+        <h2 class="section-title">Qui sommes-nous</h2>
+        <p>Le Plateau Comedy Club est un collectif de passionnés de stand-up cherchant à partager sa passion avec le
+            plus grand nombre. Le collectif est composé de gros FDP (surtout Anthony).</p>
+        <p>Vous souhaitez organiser des soirées dans votre établissement ou réaliser un partenariat ? Contactez-nous à
+            leplateauoff@gmail.com</p>
+        <p>Vous êtes humoriste et vous souhaitez jouer chez nous ? Contactez-nous sur <a
+                href="https://www.instagram.com/leplateauoff/" target="_blank">Instagram</a></p>
+        <p>Vous êtes venus chez nous et apprécié la soirée ? N'hésitez pas à nous laisser un <a
+                href="https://g.page/r/CcjkKhjspymvEBE/review" target="_blank">avis</a>.</p>
+        <div class="scrolling-photos">
+            <img src="Photo1.jpg" alt="Soirée">
+            <img src="Photo2.jpg" alt="Soirée">
+            <img src="Photo3.jpg" alt="Soirée">
+            <!-- Continue for other photos -->
+        </div>
+    </section>
+
+    <div class="back-to-top">
+        <a href="#">Retour en haut de la page</a>
+    </div>
+
+    <script>
+        // Random background color
+        const body = document.querySelector('body');
+        const colors = ['random-bg-1', 'random-bg-2', 'random-bg-3'];
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+        body.classList.add(randomColor);
+    </script>
 </body>
+
 </html>
