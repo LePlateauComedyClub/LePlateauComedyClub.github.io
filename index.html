@@ -295,23 +295,43 @@
             background-color: #39EA6B;
         }
 
-   .photo-gallery {
+      .image-gallery {
         display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+        text-align: center;
+        position: relative;
+        margin-top: 100px;
+      }
 
-    .scrolling-photos {
-        display: flex;
+      .image-container {
         overflow: hidden;
-        width: 60%;
-        scroll-behavior: smooth;
-    }
+        width: 600px; /* Adjust width as needed */
+        height: 400px; /* Adjust height as needed */
+      }
 
-    .scrolling-photos img {
-        min-width: 100%;
-        transition: transform 0.5s ease;
-    }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .prev-btn, .next-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        padding: 10px;
+        border: none;
+        cursor: pointer;
+      }
+
+      .prev-btn {
+        left: 0;
+      }
+
+      .next-btn {
+        right: 0;
+      }
 
     button {
         background-color: #000000;
@@ -326,15 +346,6 @@
         background-color: #ccc;
         cursor: not-allowed;
     }
-
-    .scrolling-photos img {
-    width: 100%; /* Remplit toute la largeur du conteneur */
-    max-width: 900px; /* Ajuste cette valeur pour la largeur maximale souhaitée */
-    max-height: 600px; /* Ajuste cette valeur pour la hauteur maximale souhaitée */
-    object-fit: contain; /* L'image sera entièrement visible sans être coupée */
-    margin-right: 2px; /* Espacement entre les images */
-    object-position: center; /* Centre l'image dans son conteneur */
-}
         
     </style>
 </head>
@@ -394,73 +405,73 @@
         <h2 class="section-title">Ils sont venus</h2>
         <div class="artist">
             <a href="https://www.instagram.com/lavraielala/" target="_blank">
-                <img src="artiste1.png" alt="Lala SAGNA">
+                <img src="artiste1.jpg" alt="Lala SAGNA">
                 <div class="artist-name">Lala SAGNA</div>
             </a>
         </div>
         <div class="artist">
             <a href="https://www.instagram.com/malik_faresofficiel/" target="_blank">
-                <img src="artiste2.png" alt="Malik FARES">
+                <img src="artiste2.jpg" alt="Malik FARES">
                 <div class="artist-name">Malik FARES</div>
             </a>
         </div>
         <div class="artist">
             <a href="https://www.instagram.com/audelener/" target="_blank">
-                <img src="artiste3.png" alt="Aude LENER">
+                <img src="artiste3.jpg" alt="Aude LENER">
                 <div class="artist-name">Aude LENER</div>
             </a>
         </div>
         <div class="artist">
             <a href="https://www.instagram.com/nina.azoulai/" target="_blank">
-                <img src="artiste4.png" alt="Nina AZOULAI">
+                <img src="artiste4.jpg" alt="Nina AZOULAI">
                 <div class="artist-name">Nina AZOULAI</div>
             </a>
         </div>
         <div class="artist">
             <a href="https://www.instagram.com/ambrestandup/" target="_blank">
-                <img src="artiste5.png" alt="Ambre">
+                <img src="artiste5.jpg" alt="Ambre">
                 <div class="artist-name">Ambre</div>
             </a>
         </div>
         <div class="artist">
             <a href="https://www.instagram.com/joellegewolb/" target="_blank">
-                <img src="artiste6.png" alt="Joelle GEWOLB">
+                <img src="artiste6.jpg" alt="Joelle GEWOLB">
                 <div class="artist-name">Joelle GEWOLB</div>
             </a>
         </div>
         <div class="artist">
             <a href="https://www.instagram.com/mouadlevrai/" target="_blank">
-                <img src="artiste7.png" alt="Mouad BENFARES">
+                <img src="artiste7.jpg" alt="Mouad BENFARES">
                 <div class="artist-name">Mouad BENFARES</div>
             </a>
         </div>
         <div class="artist">
             <a href="https://www.instagram.com/sophieloustalot/" target="_blank">
-                <img src="artiste8.png" alt="Sophie LOUSTALOT">
+                <img src="artiste8.jpg" alt="Sophie LOUSTALOT">
                 <div class="artist-name">Sophie LOUSTALOT</div>
             </a>
         </div>
         <div class="artist">
             <a href="https://www.instagram.com/malikbelkhodja/" target="_blank">
-                <img src="artiste9.png" alt="Malik BELKHODJA">
+                <img src="artiste9.jpg" alt="Malik BELKHODJA">
                 <div class="artist-name">Malik BELKHODJA</div>
             </a>
         </div>
         <div class="artist">
             <a href="https://www.instagram.com/ethanlallouz/" target="_blank">
-                <img src="artiste10.png" alt="Ethan LALLOUZ">
+                <img src="artiste10.jpg" alt="Ethan LALLOUZ">
                 <div class="artist-name">Ethan LALLOUZ</div>
             </a>
         </div>
         <div class="artist">
             <a href="https://www.instagram.com/christine_berrou/" target="_blank">
-                <img src="artiste11.png" alt="Christine BERROU">
+                <img src="artiste11.jpg" alt="Christine BERROU">
                 <div class="artist-name">Christine BERROU</div>
             </a>
         </div>
         <div class="artist">
             <a href="https://www.instagram.com/kobz.off/" target="_blank">
-                <img src="artiste12.png" alt="Yannis KOBZ">
+                <img src="artiste12.jpg" alt="Yannis KOBZ">
                 <div class="artist-name">Yannis KOBZ</div>
             </a>
         </div>
@@ -490,21 +501,21 @@
                 href="https://www.instagram.com/leplateauoff/" target="_blank">Instagram</a></p>
         <p>Vous êtes venus chez nous et apprécié la soirée ? N'hésitez pas à nous laisser un <a
                 href="https://g.page/r/CcjkKhjspymvEBE/review" target="_blank">avis</a>.</p>
-       <div class="photo-gallery">
-    <button class="prev-btn">Précédent</button>
-  
-    
-    <div class="scrolling-photos">
-        <img src="photo1.jpg" alt="Soirée">
-        <img src="photo2.jpg" alt="Soirée">
-        <img src="photo3.jpg" alt="Soirée 111">
-        <img src="photo4.jpg" alt="Soirée">
-        <img src="photo5.jpg" alt="Soirée">
-        <img src="photo6.jpg" alt="Soirée">
-        <img src="photo7.jpg" alt="Soirée">
+         
+    <div class="image-gallery">
+      <button class="prev-btn">Previous</button>
+      <div class="image-container">
+        <img src="photo1.jpg" alt="Soirée 1">
+        <img src="photo2.jpg" alt="Soirée 2">
+        <img src="photo3.jpg" alt="Soirée 3">
+        <img src="photo4.jpg" alt="Soirée 4">
+        <img src="photo5.jpg" alt="Soirée 5">
+        <img src="photo6.jpg" alt="Soirée 6">
+        <img src="photo7.jpg" alt="Soirée 7">
+        </div>
+      <button class="next-btn">Next</button>
     </div>
-    <button class="next-btn">Suivant</button>
-</div>
+        
     </section>
 
     <div class="back-to-top">
@@ -525,44 +536,34 @@
         const colors = ['random-bg-1', 'random-bg-2', 'random-bg-3'];
         const randomColor = colors[Math.floor(Math.random() * colors.length)];
         body.classList.add(randomColor);
-
-
     </script>
+  
     <script>
-    const scrollingPhotos = document.querySelector('.scrolling-photos');
+    const imageContainer = document.querySelector('.image-container');
+    const images = imageContainer.querySelectorAll('img');
     const prevBtn = document.querySelector('.prev-btn');
     const nextBtn = document.querySelector('.next-btn');
-    let scrollAmount = 0;
-    const scrollStep = scrollingPhotos.clientWidth;
+    let currentIndex = 0;
+
+    function showImage(index)   
+     {
+      images.forEach((img, i) => {
+        img.style.display = i === index ? 'block' : 'none';
+      });
+    }
 
     nextBtn.addEventListener('click', () => {
-        if (scrollAmount <= scrollingPhotos.scrollWidth - scrollStep) {
-            scrollAmount += scrollStep;
-            scrollingPhotos.scrollTo({
-                left: scrollAmount,
-                behavior: 'smooth'
-            });
-        }
-        updateButtons();
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage(currentIndex);
     });
 
     prevBtn.addEventListener('click', () => {
-        if (scrollAmount > 0) {
-            scrollAmount -= scrollStep;
-            scrollingPhotos.scrollTo({
-                left: scrollAmount,
-                behavior: 'smooth'
-            });
-        }
-        updateButtons();
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      showImage(currentIndex);
     });
 
-    function updateButtons() {
-        prevBtn.disabled = scrollAmount <= 0;
-        nextBtn.disabled = scrollAmount >= scrollingPhotos.scrollWidth - scrollStep;
-    }
+    showImage(currentIndex);   
 
-    updateButtons();
 </script>
 </body>
 
