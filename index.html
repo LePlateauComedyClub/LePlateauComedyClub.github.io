@@ -303,6 +303,14 @@
         cursor: not-allowed;
     }
 
+    .scrolling-photos img {
+    width: 100%; /* Remplit toute la largeur du conteneur */
+    max-width: 300px; /* Ajuste cette valeur pour la largeur maximale souhaitée */
+    max-height: 200px; /* Ajuste cette valeur pour la hauteur maximale souhaitée */
+    object-fit: contain; /* L'image sera entièrement visible sans être coupée */
+    margin-right: 10px; /* Espacement entre les images */
+    object-position: center; /* Centre l'image dans son conteneur */
+}
         
     </style>
 </head>
