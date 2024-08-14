@@ -35,14 +35,11 @@
             align-items: center;
         }
 
-        header-left .title {
-       font-family: 'Poppins', sans-serif;
-    font-weight: 900; /* Épaisseur du texte */
-    font-size: 1.5em; /* Ajuste la taille du texte si nécessaire */
-    color: white; /* Couleur de l'intérieur du texte */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Ombre projetée noire opaque */
-    padding: 5px 10px; /* Optionnel : ajoute un peu de padding autour du texte */
+.header-left .title-image {
+    width: 150px; /* Ajuste la largeur de l'image si nécessaire */
+    height: auto; /* Maintient les proportions de l'image */
     margin-left: 15px;
+    cursor: pointer; /* Change le curseur pour indiquer que c'est cliquable */
 }
         .header-left img {
             width: 24px;
@@ -345,7 +342,9 @@
 
     <header>
         <div class="header-left">
-            <span>LE PLATEAU COMEDY CLUB</span>
+            <a href="#accueil">
+            <img src="Titre.png" alt="Titre" class="title-image">
+            </a>
             <a href="https://www.instagram.com/leplateauoff/" target="_blank"><img src="Instagram_icon_black.png"
                     alt="Instagram"></a>
             <a href="https://www.facebook.com/p/Le-Plateau-Comedy-Club-61555936007236/?_rdr" target="_blank"><img
