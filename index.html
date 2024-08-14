@@ -33,8 +33,6 @@
         .header-left {
             display: flex;
             align-items: center;
-            font-weight: 700;
-            font-size: 1.5em;
         }
 
         .header-left img {
@@ -56,7 +54,7 @@
         }
 
         .header-right a {
-            margin-left: 10px;
+            margin-left: 15px;
             text-decoration: none;
             color: black;
             font-weight: 700;
@@ -112,7 +110,7 @@
             max-width: 45%;
             height: auto;
             margin-bottom: 20px;
-            margin-top: 1cm;
+            margin-top: 2cm;
         }
 
         #accueil img#zinc-logo {
@@ -122,12 +120,6 @@
         }
 
         /* Ticketing section */
-        #billeterie {
-            background-color: white;
-            padding-left: 3cm;
-            padding-right: 3cm;
-        }
-
         #billeterie iframe {
             width: 100%;
             height: 600px;
@@ -141,7 +133,6 @@
             justify-content: center;
             gap: 10px;
             margin-top: 20px;
-            background-color: #88DAE7;
         }
 
         .artist {
@@ -172,7 +163,6 @@
 
         /* Concept section */
         #le-concept {
-            background-color: white;
             text-align: left;
         }
 
@@ -187,15 +177,16 @@
             text-align: center;
         }
 
-        #qui-sommes-nous .photos {
+        /* Scrolling photo section */
+        .scrolling-photos {
             display: flex;
-            justify-content: center;
-            gap: 10px;
-            flex-wrap: wrap;
+            overflow-x: scroll;
+            padding: 20px 0;
         }
 
-        #qui-sommes-nous img {
+        .scrolling-photos img {
             height: 150px;
+            margin-right: 10px;
             object-fit: cover;
         }
 
@@ -313,24 +304,21 @@
         <a href="#ils-sont-venus">Ils sont venus</a>
         <a href="#le-concept">Le concept</a>
         <a href="#qui-sommes-nous">Qui sommes-nous</a>
-        <a href="https://www.instagram.com/leplateauoff/" target="_blank"><img src="Instagram_icon_black.png"
-                alt="Instagram"></a>
-        <a href="https://www.facebook.com/p/Le-Plateau-Comedy-Club-61555936007236/?_rdr" target="_blank"><img
-                src="fb_icon_black.png" alt="Facebook"></a>
-        <a href="https://www.tiktok.com/@leplateauoff" target="_blank"><img src="tiktok_icon_black.png"
-                alt="TikTok"></a>
     </nav>
 
     <section id="accueil">
         <img id="logo" src="logo.png" alt="Le Plateau Comedy Club">
         <p>Tous les mercredis 20h chez</p>
-        <a href="https://www.monsieur-lezinc.com/odeon-1" target="_blank"><img id="zinc-logo" src="logo_monsieurlezinc.png"
-                alt="Monsieur Le Zinc"></a>
+        <a href="https://www.monsieur-lezinc.com/odeon-1" target="_blank"><img id="zinc-logo"
+                src="MONSIEUR-LE-ZINC-BLACK.png" alt="Monsieur Le Zinc"></a>
+        <p>et d'autres dates exceptionnelles</p>
+        <p>13 rue Monsieur Le Prince 75006 Paris<br>Métro Odéon</p>
+        <a href="https://maps.app.goo.gl/ea9cp9QZPrPCF4rZ7" target="_blank">Voir sur la carte</a>
     </section>
 
     <section id="billeterie">
-        <iframe src="https://www.billetweb.fr/multi_event.php?code=xxxxxx&t=1697835600&cache_bust=[timestamp]"
-            frameborder="0"></iframe>
+        <h2 class="section-title">Billetterie</h2>
+        <iframe src="https://my.weezevent.com/le-plateau-comedy-club-copy-1?cache_bust={{Date.now()}}"></iframe>
     </section>
 
     <section id="ils-sont-venus">
@@ -371,7 +359,6 @@
                 <div class="artist-name">Joelle GEWOLB</div>
             </a>
         </div>
-        <br>
         <div class="artist">
             <a href="https://www.instagram.com/mouadlevrai/" target="_blank">
                 <img src="artiste7.png" alt="Mouad BENFARES">
@@ -412,7 +399,6 @@
 
     <section id="le-concept">
         <h2 class="section-title">Le concept</h2>
-        <p>Depuis janvier 2024, Le Plateau Comedy Club organise des soirées Stand-Up à Paris et ailleurs ! Avec une ambition : vous servir le meilleur du Stand Up sur le Plateau !</p>
         <div>
             <img src="Logo_LePlateau.png" alt="Le Plateau">
             <p>Le Plateau : Humoristes confirmés, sélectionnés parmi les meilleurs.</p>
@@ -434,7 +420,7 @@
                 href="https://www.instagram.com/leplateauoff/" target="_blank">Instagram</a></p>
         <p>Vous êtes venus chez nous et apprécié la soirée ? N'hésitez pas à nous laisser un <a
                 href="https://g.page/r/CcjkKhjspymvEBE/review" target="_blank">avis</a>.</p>
-        <div class="photos">
+        <div class="scrolling-photos">
             <img src="Photo1.jpg" alt="Soirée">
             <img src="Photo2.jpg" alt="Soirée">
             <img src="Photo3.jpg" alt="Soirée">
