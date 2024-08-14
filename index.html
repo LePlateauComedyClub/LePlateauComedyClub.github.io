@@ -270,6 +270,40 @@
         body.random-bg-3 {
             background-color: #39EA6B;
         }
+
+   .photo-gallery {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .scrolling-photos {
+        display: flex;
+        overflow: hidden;
+        width: 60%;
+        scroll-behavior: smooth;
+    }
+
+    .scrolling-photos img {
+        min-width: 100%;
+        transition: transform 0.5s ease;
+    }
+
+    button {
+        background-color: #000000;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    button:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+    }
+
+        
     </style>
 </head>
 
@@ -454,7 +488,45 @@
         const colors = ['random-bg-1', 'random-bg-2', 'random-bg-3'];
         const randomColor = colors[Math.floor(Math.random() * colors.length)];
         body.classList.add(randomColor);
+
+
     </script>
+    <script>
+    const scrollingPhotos = document.querySelector('.scrolling-photos');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    let scrollAmount = 0;
+    const scrollStep = scrollingPhotos.clientWidth;
+
+    nextBtn.addEventListener('click', () => {
+        if (scrollAmount <= scrollingPhotos.scrollWidth - scrollStep) {
+            scrollAmount += scrollStep;
+            scrollingPhotos.scrollTo({
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+        updateButtons();
+    });
+
+    prevBtn.addEventListener('click', () => {
+        if (scrollAmount > 0) {
+            scrollAmount -= scrollStep;
+            scrollingPhotos.scrollTo({
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+        updateButtons();
+    });
+
+    function updateButtons() {
+        prevBtn.disabled = scrollAmount <= 0;
+        nextBtn.disabled = scrollAmount >= scrollingPhotos.scrollWidth - scrollStep;
+    }
+
+    updateButtons();
+</script>
 </body>
 
 </html>
