@@ -31,17 +31,37 @@
         }
 
         .header-left {
-            font-weight: 700;
-            font-size: 1.5em;
+            display: flex;
+            align-items: center;
         }
 
-        .header-right img {
+        .header-left img {
             width: 24px;
             height: 24px;
             margin-left: 15px;
         }
 
+        .header-left div {
+            margin-left: 15px;
+            padding: 5px 10px;
+            border: 1px solid black;
+            cursor: pointer;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-right a {
+            margin-left: 15px;
+            text-decoration: none;
+            color: black;
+            font-weight: 700;
+        }
+
         nav {
+            display: none;
             position: fixed;
             right: 0;
             top: 60px;
@@ -58,6 +78,14 @@
             text-decoration: none;
             color: black;
             font-weight: 700;
+        }
+
+        .nav-toggle {
+            display: none;
+            background-color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
         }
 
         section {
@@ -78,8 +106,15 @@
             text-align: center;
         }
 
-        #accueil img {
-            max-width: 60%;
+        #accueil img#logo {
+            max-width: 45%;
+            height: auto;
+            margin-bottom: 20px;
+            margin-top: 2cm;
+        }
+
+        #accueil img#zinc-logo {
+            max-width: 15%;
             height: auto;
             margin-bottom: 20px;
         }
@@ -97,6 +132,7 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 10px;
+            margin-top: 20px;
         }
 
         .artist {
@@ -127,12 +163,13 @@
 
         /* Concept section */
         #le-concept {
-            text-align: center;
+            text-align: left;
         }
 
         #le-concept img {
-            width: 100px;
+            width: 150px;
             margin: 10px;
+            vertical-align: middle;
         }
 
         /* About Us section */
@@ -172,12 +209,34 @@
                 align-items: flex-start;
             }
 
-            nav {
-                top: 120px;
+            .header-right {
+                display: none;
             }
 
-            #accueil img {
-                max-width: 80%;
+            .nav-toggle {
+                display: block;
+            }
+
+            nav {
+                display: block;
+                position: relative;
+                top: 0;
+                width: 100%;
+                box-shadow: none;
+                text-align: left;
+            }
+
+            nav a {
+                display: inline;
+                margin-right: 20px;
+            }
+
+            #accueil img#logo {
+                max-width: 60%;
+            }
+
+            #accueil img#zinc-logo {
+                max-width: 30%;
             }
 
             #billeterie iframe {
@@ -187,6 +246,11 @@
             .artist {
                 width: 100px;
                 height: 160px;
+            }
+
+            .header-right a {
+                display: block;
+                margin: 5px 0;
             }
         }
 
@@ -213,9 +277,7 @@
 
     <header>
         <div class="header-left">
-            LE PLATEAU COMEDY CLUB
-        </div>
-        <div class="header-right">
+            <span>LE PLATEAU COMEDY CLUB</span>
             <a href="https://www.instagram.com/leplateauoff/" target="_blank"><img src="Instagram_icon_black.png"
                     alt="Instagram"></a>
             <a href="https://www.facebook.com/p/Le-Plateau-Comedy-Club-61555936007236/?_rdr" target="_blank"><img
@@ -223,9 +285,17 @@
             <a href="https://www.tiktok.com/@leplateauoff" target="_blank"><img src="tiktok_icon_black.png"
                     alt="TikTok"></a>
             <a href="https://g.page/r/CcjkKhjspymvEBE/review" target="_blank">
-                <div style="display: inline-block; padding: 5px 10px; border: 1px solid black;">Laisser un avis</div>
+                <div>Laisser un avis</div>
             </a>
         </div>
+        <div class="header-right">
+            <a href="#accueil">Accueil</a>
+            <a href="#billeterie">Billetterie</a>
+            <a href="#ils-sont-venus">Ils sont venus</a>
+            <a href="#le-concept">Le concept</a>
+            <a href="#qui-sommes-nous">Qui sommes-nous</a>
+        </div>
+        <button class="nav-toggle">☰ Menu</button>
     </header>
 
     <nav>
@@ -237,10 +307,10 @@
     </nav>
 
     <section id="accueil">
-        <img src="logo.png" alt="Le Plateau Comedy Club">
+        <img id="logo" src="logo.png" alt="Le Plateau Comedy Club">
         <p>Tous les mercredis 20h chez</p>
-        <a href="https://www.monsieur-lezinc.com/odeon-1" target="_blank"><img src="MONSIEUR-LE-ZINC-BLACK.png"
-                alt="Monsieur Le Zinc"></a>
+        <a href="https://www.monsieur-lezinc.com/odeon-1" target="_blank"><img id="zinc-logo"
+                src="MONSIEUR-LE-ZINC-BLACK.png" alt="Monsieur Le Zinc"></a>
         <p>et d'autres dates exceptionnelles</p>
         <p>13 rue Monsieur Le Prince 75006 Paris<br>Métro Odéon</p>
         <a href="https://maps.app.goo.gl/ea9cp9QZPrPCF4rZ7" target="_blank">Voir sur la carte</a>
@@ -248,7 +318,7 @@
 
     <section id="billeterie">
         <h2 class="section-title">Billetterie</h2>
-        <iframe src="https://my.weezevent.com/le-plateau-comedy-club-copy-1"></iframe>
+        <iframe src="https://my.weezevent.com/le-plateau-comedy-club-copy-1?cache_bust={{Date.now()}}"></iframe>
     </section>
 
     <section id="ils-sont-venus">
@@ -265,21 +335,78 @@
                 <div class="artist-name">Malik FARES</div>
             </a>
         </div>
-        <!-- Continue for the other artists -->
+        <div class="artist">
+            <a href="https://www.instagram.com/audelener/" target="_blank">
+                <img src="artiste3.png" alt="Aude LENER">
+                <div class="artist-name">Aude LENER</div>
+            </a>
+        </div>
+        <div class="artist">
+            <a href="https://www.instagram.com/nina.azoulai/" target="_blank">
+                <img src="artiste4.png" alt="Nina AZOULAI">
+                <div class="artist-name">Nina AZOULAI</div>
+            </a>
+        </div>
+        <div class="artist">
+            <a href="https://www.instagram.com/ambrestandup/" target="_blank">
+                <img src="artiste5.png" alt="Ambre">
+                <div class="artist-name">Ambre</div>
+            </a>
+        </div>
+        <div class="artist">
+            <a href="https://www.instagram.com/joellegewolb/" target="_blank">
+                <img src="artiste6.png" alt="Joelle GEWOLB">
+                <div class="artist-name">Joelle GEWOLB</div>
+            </a>
+        </div>
+        <div class="artist">
+            <a href="https://www.instagram.com/mouadlevrai/" target="_blank">
+                <img src="artiste7.png" alt="Mouad BENFARES">
+                <div class="artist-name">Mouad BENFARES</div>
+            </a>
+        </div>
+        <div class="artist">
+            <a href="https://www.instagram.com/sophieloustalot/" target="_blank">
+                <img src="artiste8.png" alt="Sophie LOUSTALOT">
+                <div class="artist-name">Sophie LOUSTALOT</div>
+            </a>
+        </div>
+        <div class="artist">
+            <a href="https://www.instagram.com/malikbelkhodja/" target="_blank">
+                <img src="artiste9.png" alt="Malik BELKHODJA">
+                <div class="artist-name">Malik BELKHODJA</div>
+            </a>
+        </div>
+        <div class="artist">
+            <a href="https://www.instagram.com/ethanlallouz/" target="_blank">
+                <img src="artiste10.png" alt="Ethan LALLOUZ">
+                <div class="artist-name">Ethan LALLOUZ</div>
+            </a>
+        </div>
+        <div class="artist">
+            <a href="https://www.instagram.com/christine_berrou/" target="_blank">
+                <img src="artiste11.png" alt="Christine BERROU">
+                <div class="artist-name">Christine BERROU</div>
+            </a>
+        </div>
+        <div class="artist">
+            <a href="https://www.instagram.com/kobz.off/" target="_blank">
+                <img src="artiste12.png" alt="Yannis KOBZ">
+                <div class="artist-name">Yannis KOBZ</div>
+            </a>
+        </div>
     </section>
 
     <section id="le-concept">
         <h2 class="section-title">Le concept</h2>
-        <p>Depuis janvier 2024 Le Plateau Comedy Club organise des soirées Stand-Up à Paris et ailleurs !</p>
-        <p>Avec une ambition : vous servir le meilleur du Stand Up sur le Plateau !</p>
         <div>
             <img src="Logo_LePlateau.png" alt="Le Plateau">
-            <span>Le Plateau : Humoristes confirmés, sélectionnés parmi les meilleurs.</span>
+            <p>Le Plateau : Humoristes confirmés, sélectionnés parmi les meilleurs.</p>
         </div>
         <div>
             <img src="Logo_OpenMic.png" alt="Le Plateau Open Mic">
-            <span>Le Plateau Open Mic (POM) : Nouveaux talents ou humoristes confirmés qui testent leurs nouvelles
-                blagues.</span>
+            <p>Le Plateau Open Mic (POM) : Nouveaux talents ou humoristes confirmés qui testent leurs nouvelles
+                blagues.</p>
         </div>
     </section>
 
@@ -297,7 +424,10 @@
             <img src="Photo1.jpg" alt="Soirée">
             <img src="Photo2.jpg" alt="Soirée">
             <img src="Photo3.jpg" alt="Soirée">
-            <!-- Continue for other photos -->
+            <img src="Photo4.jpg" alt="Soirée">
+            <img src="Photo5.jpg" alt="Soirée">
+            <img src="Photo6.jpg" alt="Soirée">
+            <img src="Photo7.jpg" alt="Soirée">
         </div>
     </section>
 
@@ -306,6 +436,14 @@
     </div>
 
     <script>
+        // Toggle navigation for mobile
+        const navToggle = document.querySelector('.nav-toggle');
+        const nav = document.querySelector('nav');
+
+        navToggle.addEventListener('click', () => {
+            nav.classList.toggle('open');
+        });
+
         // Random background color
         const body = document.querySelector('body');
         const colors = ['random-bg-1', 'random-bg-2', 'random-bg-3'];
