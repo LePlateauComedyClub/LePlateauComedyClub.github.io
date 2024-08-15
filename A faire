@@ -1,7 +1,7 @@
 [X] Corriger les en-tete de section pour avoir les logo
 [] Adapter pour les smartphones
-[] rajouter dans qui sommes nous -  un mail de contact pro leplateau.contactpro@gmail.com
-[] rajouter dans qui sommes nous - un mail de contact pour les client leplateau.contact@gmail.com 
+[] rajouter dans qui sommes nous -  un mail de contact pro leplateau.pro@gmail.com
+[] rajouter dans qui sommes nous - un mail de contact pour les client leplateau.info@gmail.com 
 [] afficher les abis google 
 [] Rendre l'adresse cliquable plutot qu'afficher un "voir sur la carte" et enlever voir sur la carte ? a débattre
 [] mettre "et d'autres dates exceptionnelles" apres l'adresse du mr le zinc
@@ -9,4 +9,4 @@
 [X] corriger l'alignement dans le concept
 [X] corriger l'alignement dans qui sommes nous 
 [] adapter la billeterie selon ce qui sera mis en place
-
+[] Mettre un séparateur de partie (ex emple un segment _________________ centrée au milieu de la page)
