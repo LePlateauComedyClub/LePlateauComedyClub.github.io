@@ -150,6 +150,7 @@
             text-align: center;
             position: relative;
             overflow: hidden;
+            margin-right: 20px;
         }
 
         .artist img {
@@ -297,7 +298,7 @@
 
       .image-gallery {
         display: flex;
-        text-align: center;
+        justify-content: center;
         position: relative;
         margin-top: 100px;
       }
@@ -321,16 +322,17 @@
         background-color: rgba(0, 0, 0, 0.5);
         color: white;
         padding: 10px;
-        border: none;
+        border: none;   
+
         cursor: pointer;
       }
 
       .prev-btn {
-        left: 0;
+        left: 5%; /* Adjust percentage as needed */
       }
 
       .next-btn {
-        right: 0;
+        right: 5%; /* Adjust percentage as needed */
       }
 
     button {
@@ -402,6 +404,7 @@
 
     <section id="ils-sont-venus" style="display: flex; flex-direction: column; margin: 80px;">
       <h2 class="section-title"><img src="Ils sont venus.png" alt="Ils sont venus" style="object-fit: contain;"></h2>
+      <div class="artist-container" style="display: flex; flex-direction: row; flex-wrap: wrap;"/>
         <div class="artist">
             <a href="https://www.instagram.com/lavraielala/" target="_blank">
                 <img src="artiste1.jpg" alt="Lala SAGNA">
@@ -474,6 +477,7 @@
                 <div class="artist-name">Yannis KOBZ</div>
             </a>
         </div>
+      </div>
     </section>
 
     <section id="le-concept" style="display: flex; flex-direction: column; margin: 80px;">
@@ -503,8 +507,8 @@
                 href="https://g.page/r/CcjkKhjspymvEBE/review" target="_blank">avis</a>.</p>
          
     <div class="image-gallery">
-      <button class="prev-btn">Previous</button>
       <div class="image-container">
+        <button class="prev-btn">Previous</button>
         <img src="photo1.jpg" alt="Soirée 1">
         <img src="photo2.jpg" alt="Soirée 2">
         <img src="photo3.jpg" alt="Soirée 3">
@@ -512,8 +516,8 @@
         <img src="photo5.jpg" alt="Soirée 5">
         <img src="photo6.jpg" alt="Soirée 6">
         <img src="photo7.jpg" alt="Soirée 7">
+        <button class="next-btn">Next</button>
         </div>
-      <button class="next-btn">Next</button>
     </div>
         
     </section>
