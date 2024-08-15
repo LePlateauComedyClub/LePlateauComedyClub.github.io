@@ -279,19 +279,19 @@
         }
 
         /* Random background color */
-        body {
+        body.random-bg-blue {
             background-color: #88DAE7;
         }
 
-        body.random-bg-1 {
+        body.random-bg-yellow {
             background-color: #FED766;
         }
 
-        body.random-bg-2 {
+        body.random-bg-pink {
             background-color: #EC91D8;
         }
 
-        body.random-bg-3 {
+        body.random-bg-green {
             background-color: #39EA6B;
         }
 
@@ -401,8 +401,7 @@
     </section>
 
     <section id="ils-sont-venus" style="margin: 80px;">
-       <!--  margin pour la marge avec section au dessus -->
-        <h2 class="section-title">Ils sont venus</h2>
+      <h2 class="section-title"><img src="Ils sont venus.png.png" alt="Ils sont venus" style="object-fit: contain;"></h2>
         <div class="artist">
             <a href="https://www.instagram.com/lavraielala/" target="_blank">
                 <img src="artiste1.jpg" alt="Lala SAGNA">
@@ -477,8 +476,8 @@
         </div>
     </section>
 
-    <section id="le-concept">
-        <h2 class="section-title">Le concept</h2>
+    <section id="le-concept" style="display: flex; flex-direction: column; margin: 80px;">
+        <h2 class="section-title"><img src="Le concept.png" alt="Le concept" style="object-fit: contain;"></h2>
         <p> Depuis janvier 2024, Le Plateau Comedy Club organise des soirées Stand-Up à Paris et ailleurs ! Avec une ambition : vous servir le meilleur du Stand Up sur le Plateau </p>
         <div>
             <img src="Logo_LePlateau.png" alt="Le Plateau" style="object-fit: contain;">
@@ -491,8 +490,9 @@
         </div>
     </section>
 
-    <section id="qui-sommes-nous" style="margin: 80px;">
-        <h2 class="section-title">Qui sommes-nous</h2>
+    <section id="qui-sommes-nous" style="display: flex; flex-direction: column; margin: 80px;">
+             <!--  il faudrait style class avec style="display: flex; flex-direction: column; margin: 80px;" -->
+        <h2 class="section-title"><img src="Qui sommes nous.png" alt="Qui sommes nous" style="object-fit: contain;"></h2>
         <p>Le Plateau Comedy Club est un collectif de passionnés de stand-up cherchant à partager sa passion avec le
             plus grand nombre. Le collectif est composé de gros FDP (surtout Anthony).</p>
         <p>Vous souhaitez organiser des soirées dans votre établissement ou réaliser un partenariat ? Contactez-nous à
@@ -533,7 +533,7 @@
 
         // Random background color
         const body = document.querySelector('body');
-        const colors = ['random-bg-1', 'random-bg-2', 'random-bg-3'];
+        const colors = ['random-bg-blue', 'random-bg-yellow', 'random-bg-pink', 'random-bg-green'];
         const randomColor = colors[Math.floor(Math.random() * colors.length)];
         body.classList.add(randomColor);
     </script>
