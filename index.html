@@ -172,18 +172,11 @@
 
         /* Concept section */
         #le-concept {
-            text-align: left;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 10px;
             margin-top: 20px;
-        }
-
-        #le-concept img {
-            width: 150px;
-            margin: 10px;
-            vertical-align: middle;
         }
 
         /* About Us section */
@@ -397,14 +390,14 @@
         <a href="https://maps.app.goo.gl/ea9cp9QZPrPCF4rZ7" target="_blank">Voir sur la carte</a>
     </section>
 
-    <section id="billeterie" style="width: 650px; height: auto; margin: 40px auto; border: 1px solid #ccc; box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);">  <!--  margin pour la marge avec section au dessus -->
+    <section id="billeterie" style="width: 650px; height: auto; margin: 40px auto;">  <!--  margin pour la marge avec section au dessus -->
       <h2 class="section-title"><img src="Billeterie.png" alt="Billeterie" style="object-fit: contain;"></h2>
         <iframe src="https://my.weezevent.com/le-plateau-comedy-club-copy-1?cache_bust={{Date.now()}}" ></iframe>
     </section>
 
     <section id="ils-sont-venus" style="display: flex; flex-direction: column; margin: 80px;">
       <h2 class="section-title"><img src="Ils sont venus.png" alt="Ils sont venus" style="object-fit: contain;"></h2>
-      <div class="artist-container" style="display: flex; flex-direction: row; flex-wrap: wrap;"/>
+      <div class="artist-container" style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center;"/>
         <div class="artist">
             <a href="https://www.instagram.com/lavraielala/" target="_blank">
                 <img src="artiste1.jpg" alt="Lala SAGNA">
@@ -483,12 +476,12 @@
     <section id="le-concept" style="display: flex; flex-direction: column; margin: 80px;">
         <h2 class="section-title"><img src="Le concept.png" alt="Le concept" style="object-fit: contain;"></h2>
         <p> Depuis janvier 2024, Le Plateau Comedy Club organise des soirées Stand-Up à Paris et ailleurs ! Avec une ambition : vous servir le meilleur du Stand Up sur le Plateau </p>
-        <div>
-            <img src="Logo_LePlateau.png" alt="Le Plateau" style="object-fit: contain;">
+        <div style="display: flex; flex-direction: row;">
+            <img src="Logo_LePlateau.png" alt="Le Plateau" style="object-fit: contain; width: 150px;">
             <p>Le Plateau : Humoristes confirmés, sélectionnés parmi les meilleurs.</p>
         </div>
-        <div>
-            <img src="Logo_OpenMic.png" alt="Le Plateau Open Mic" style="object-fit: contain;">
+        <div style="display: flex; flex-direction: row;">
+            <img src="Logo_OpenMic.png" alt="Le Plateau Open Mic" style="object-fit: contain; width: 150px;">
             <p>Le Plateau Open Mic (POM) : Nouveaux talents ou humoristes confirmés qui testent leurs nouvelles
                 blagues.</p>
         </div>
