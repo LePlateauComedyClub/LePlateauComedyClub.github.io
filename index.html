@@ -68,15 +68,18 @@
         }
 
         nav {
-            display: none;
-            position: fixed;
-            right: 0;
-            top: 60px;
-            background-color: white;
-            padding: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-            text-align: right;
+          position: fixed;
+          left: 0;
+          top: 0;
+          width: 35%; /* Adjust the width as needed */
+          height: 25%; /* Adjust the height as needed */
+          background-color: #f0f0f0;
+          padding: 20px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          transition: transform 0.3s ease-in-out;
+          transform: translateX(-100%);   
         }
 
         nav a {
@@ -239,8 +242,12 @@
             cursor: pointer;
           }
           
+          nav-toggle.open {
+            transform: translateX(100%);   
+          }
+          
           nav.open {
-            display: block; /* Visible when open */
+            transform: translateX(0); /* Slide into view */
         }
         }
 
@@ -342,15 +349,15 @@
             <a href="#qui-sommes-nous">Qui sommes-nous</a>
         </div>
         <button class="nav-toggle" style = "color: black;">☰ Menu</button>
-    </header>
-
-    <nav>
+      
+      <nav>
         <a href="#accueil">Accueil</a>
         <a href="#billeterie">Billetterie</a>
         <a href="#ils-sont-venus">Ils sont venus</a>
         <a href="#le-concept">Le concept</a>
         <a href="#qui-sommes-nous">Qui sommes-nous</a>
-    </nav>
+      </nav>
+    </header>
 
     <section id="accueil">
         <img id="logo" src="logo.png" alt="Le Plateau Comedy Club">
@@ -500,6 +507,7 @@
 
         navToggle.addEventListener('click', () => {
             nav.classList.toggle('open');
+            nav-toggle.classList.toggle('open');
         });
     </script>
   
