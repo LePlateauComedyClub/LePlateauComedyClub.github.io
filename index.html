@@ -211,7 +211,7 @@
             flex-direction: column; /* Stack header elements vertically */
           }
 
-          .header-left {
+          .header-right {
             margin-bottom: 10px;
           }
 
@@ -220,11 +220,15 @@
           }
 
           .header-left img {
-            display: none; /* Show social icons on small screens */
+            display: none; /* Hide social icons on small screens */
+          }
+          
+          .header-left div {
+            display: none; /* Hide Laisser un avis */
           }
 
           .header-right {
-            display: block; /* Hide navigation links initially */
+            display: none; /* Show navigation links initially */
           }
 
           .nav-toggle {
@@ -333,7 +337,7 @@
             <a href="#le-concept">Le concept</a>
             <a href="#qui-sommes-nous">Qui sommes-nous</a>
         </div>
-        <button class="nav-toggle">☰ Menu</button>
+        <button class="nav-toggle" style = "color: black;">☰ Menu</button>
     </header>
 
     <nav>
