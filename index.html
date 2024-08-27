@@ -207,50 +207,33 @@
 
         /* Responsive styles */
         @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
+          header {
+            flex-direction: column; /* Stack header elements vertically */
+          }
 
-            .header-right {
-                display: none;
-            }
+          .header-left {
+            margin-bottom: 10px;
+          }
 
-            .nav-toggle {
-                display: block;
-            }
+          .header-left .title-image {
+            width: 100%; /* Make image responsive */
+          }
 
-            nav {
-                display: block;
-                position: relative;
-                top: 0;
-                width: 100%;
-                box-shadow: none;
-                text-align: left;
-            }
+          .header-left img {
+            display: none; /* Show social icons on small screens */
+          }
 
-            nav a {
-                display: inline;
-                margin-right: 20px;
-            }
+          .header-right {
+            display: block; /* Hide navigation links initially */
+          }
 
-            #accueil img#logo {
-                max-width: 60%;
-            }
-
-            #accueil img#zinc-logo {
-                max-width: 30%;
-            }
-
-            .artist {
-                width: 100px;
-                height: 160px;
-            }
-
-            .header-right a {
-                display: block;
-                margin: 5px 0;
-            }
+          .nav-toggle {
+            display: block; /* Show menu toggle button */
+            background-color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+          }
         }
 
         /* Random background color */
