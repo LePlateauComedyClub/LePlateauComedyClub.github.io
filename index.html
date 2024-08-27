@@ -266,8 +266,8 @@
 
       .image-container {
         overflow: hidden;
-        width: 70%; /* Adjust width as needed */
-        height: 600px; /* Adjust height as needed */
+        width: 100%; /* Adjust width as needed */
+        max-height: 900px; /* Ajuste cette valeur pour la hauteur maximale souhaitée */
       }
 
       img {
@@ -497,7 +497,9 @@
         navToggle.addEventListener('click', () => {
             nav.classList.toggle('open');
         });
-
+    </script>
+  
+    <script>
         // Random background color
         const body = document.querySelector('body');
         const colors = ['random-bg-blue', 'random-bg-yellow', 'random-bg-pink', 'random-bg-green'];
