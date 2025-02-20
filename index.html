@@ -320,7 +320,48 @@
         background-color: #ccc;
         cursor: not-allowed;
     }
-        
+    
+    .billeterie-section {
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.section-title {
+  text-align: center; /* Center the title */
+  margin-bottom: 1rem; /* Add some space below the title */
+}
+
+.section-title img {
+  max-width: 100%; /* Ensure image scales down on smaller screens */
+  height: auto;
+  display: block; /* Prevents image from affecting layout */
+  margin: 0 auto; /* Center the image */
+}
+
+.iframe-container {
+  position: relative; /* For responsive sizing */
+  width: 100%;
+  padding-bottom: 56.25%; /* Aspect ratio 16:9 (adjust as needed) */
+  height: 0;
+  overflow: hidden;
+}
+
+.iframe-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none; /* Remove iframe border */
+}
+
+/* Optional: Add some styling for smaller screens */
+@media (max-width: 768px) {
+  .iframe-container {
+    padding-bottom: 100%; /* Make iframe take up more vertical space on smaller screens */
+  }
+}
     </style>
 </head>
 
@@ -367,12 +408,18 @@
         <a href="https://maps.app.goo.gl/ea9cp9QZPrPCF4rZ7" target="_blank"><p>13 rue Monsieur Le Prince 75006 Paris<br>Métro Odéon</p></a>
     </section>
 
-    <section id="billeterie"  style="height: auto; margin: 20px auto; display: flex; flex-direction: column; ">  <!--  margin pour la marge avec section au dessus -->
-        <h2 class="section-title"><img src="Billeterie.png" alt="Billeterie" style="object-fit: contain;"></h2>
-        <div style="display: flex; justify-content: center;">  
-          <iframe src="https://leplateau-comedyclub.qidoon.com/events?cache_bust={{Date.now()}}" style="margin: auto; width:100%; height: 100vh;"></iframe>
-        </div>
-    </section>
+    <section id="billeterie" class="billeterie-section">
+  <h2 class="section-title">
+    <img src="Billeterie.png" alt="Billeterie">
+  </h2>
+  <div class="iframe-container">
+    <iframe src="https://leplateau-comedyclub.qidoon.com/events?cache_bust={{Date.now()}}" 
+            title="Billeterie"  
+            loading="lazy"  
+            allowfullscreen> 
+    </iframe>
+  </div>
+</section>
 
     <section id="ils-sont-venus" style="display: flex; flex-direction: column; margin: 80px;">
       <h2 class="section-title"><img src="Ils sont venus.png" alt="Ils sont venus" style="object-fit: contain;"></h2>
